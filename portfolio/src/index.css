@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-blue-100: #e8f2ff;
+  --color-blue-500: #4b96ff;
+  --color-blueGray-500: #a9adc1;
+  --color-gray-100: #f7f7f7;
+  --color-gray-200: #e6e9ee;
+  --color-gray-300: #dde0e4;
+  --color-gray-400: #818890;
+  --color-gray-500: #535661;
+  --color-gray-600: #4b4c53;
+  --color-gray-700: #3a3d4a;
+  --color-gray-800: #2e3039;
+  --color-gray-900: #1f2028;
+  --color-green-100: #e7f9ed;
+  --color-green-500: #30c85e;
+  --color-green-600: #68d94a;
+  --color-red-500: #ff4545;
+  --color-yellow-500: #ffd644;
+
+  --color-team-unknown: #818890;
+  --color-team-blue: #36a3ff;
+  --color-team-red: #ff4545;
+  /* yellow in light mode is... hard */
+  --color-yellow-current: #a08600;
+  --color-yellow-500: #a08600;
+  --color-yellow-500-inverted: #ffd644;
+
+  /* tema dark */
+  --color-team-yellow: #ffd644;
+  --color-yellow-500: #ffd644;
+  --color-yellow-500-inverted: #a08600;
+  --color-team-unknown: var(--color-white);
+  --bg-primary: var(--color-gray-900);
+  --bg-secondary: var(--color-gray-800);
+  --bg-alt: var(--color-gray-700);
+  --border-secondary: var(--color-gray-600);
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-blueGray-500);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-gray-900 text-white overflow-x-hidden;
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus-within:outline-none ring-team-current ring-offset-4 ring-offset-white transition duration-300 focus-within:ring-2 focus-within:ring-team-current hover:ring-2 hover:ring-team-current focus:ring-2 focus:ring-team-current disabled:ring-0 group-hover:ring-2 group-hover:ring-team-current group-focus:ring-2 group-focus:ring-team-current dark:ring-offset-gray-900;
+  }
+
+  .focus-ring.danger {
+    @apply ring-red-500 focus-within:ring-red-500 hover:ring-red-500 focus:ring-red-500 group-hover:ring-red-500 group-focus:ring-red-500 dark:focus-within:ring-red-500 dark:hover:ring-red-500 dark:focus:ring-red-500 dark:group-hover:ring-red-500 group-focus:dark:ring-red-500;
+  }
+
+  .bg-primary {
+    @apply bg-white dark:bg-gray-900;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  .bg-alt {
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
+
+  .bg-inverse {
+    @apply bg-black dark:bg-white;
+  }
+
+  .border-primary {
+    @apply border-gray-900 dark:border-white;
+  }
+
+  .border-secondary {
+    @apply border-gray-200 dark:border-gray-600;
+  }
+
+  .text-primary {
+    @apply dark:text-black text-white;
+  }
+
+  .text-secondary {
+    @apply dark:text-gray-500 text-blueGray-500;
+  }
+
+  .text-inverse {
+    @apply dark:text-white text-black;
+  }
+
+  .linkNav {
+    @apply underlined focus:outline-none block whitespace-nowrap text-lg font-medium hover:text-team-current focus:text-team-current text-secondary;
+  }
+}
+
+.underlined {
+  position: relative;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.underlined:focus {
+  outline: none;
+  text-decoration: none !important;
+}
+
+.underlined:after {
+  content: "";
+  height: 3px;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: left;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+.underlined:hover:after,
+.underlined:focus:after,
+.active.underlined:after {
+  background-color: currentColor;
+  transform: scaleX(1);
+}
