@@ -1,4 +1,4 @@
-import { List } from "phosphor-react";
+import { List, Moon, Sun } from "phosphor-react";
 
 const NavBar = () => {
   return (
@@ -37,10 +37,24 @@ const NavBar = () => {
         <div className="flex items-center justify-center">
           <div className="block lg:hidden">
             <button className="focus:border-primary hover:border-primary border-secondary text-primary focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition">
-              <List size={32} weight="bold" />
+              <List size={32} />
             </button>
           </div>
-          <div className="hidden lg:block"></div>
+          <div className="noscript-hidden hidden lg:block">
+            <button className="border-secondary hover:border-primary focus:primary focus:outline inline-flex h-14 items-center justify-center overflow-hidden rounded-full border-2 p-1 transition w-14">
+              <Moon size={32} />
+            </button>
+          </div>
+          <a
+            href="/"
+            className="focus:outline ml-4 inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-secondary hover:border-primary transition"
+          >
+            <img
+              className="inline w-full h-full select-none rounded-full object-cover"
+              src="perfil.jpg"
+              alt="photo perfil Gustavo Fernandes"
+            />
+          </a>
         </div>
       </nav>
     </div>

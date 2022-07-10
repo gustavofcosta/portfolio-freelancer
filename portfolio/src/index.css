@@ -74,19 +74,19 @@ body {
   }
 
   .bg-alt {
-    @apply bg-gray-200 dark:bg-gray-700;
+    @apply dark:bg-gray-200 bg-gray-700;
   }
 
   .bg-inverse {
-    @apply bg-black dark:bg-white;
+    @apply dark:bg-black bg-white;
   }
 
   .border-primary {
-    @apply border-gray-900 dark:border-white;
+    @apply dark:border-gray-900 border-white;
   }
 
   .border-secondary {
-    @apply border-gray-200 dark:border-gray-600;
+    @apply dark:border-gray-200 border-gray-500;
   }
 
   .text-primary {
@@ -119,7 +119,7 @@ body {
 
 .underlined:after {
   content: "";
-  height: 3px;
+  height: 2px;
   transform: scaleX(0);
   transition: transform 0.25s ease;
   transform-origin: left;
